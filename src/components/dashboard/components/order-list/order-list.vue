@@ -21,9 +21,8 @@
                         <li class="order-list__item">
                             <p class="order-list__text">總金額</p>
                         </li>
-                        <!-- <li class="order-list__item">
-                            <p class="order-list__text">編輯</p>
-                        </li> -->
+                        <li class="order-list__item">
+                        </li>
                     </ul>
                     <div class="order-list__scrollbar-box">
                         <perfect-scrollbar  class="project-list__scrollbar ps-show-always">
@@ -46,15 +45,18 @@
                                 <li class="order-list__item">
                                     <p class="order-list__text">NT${{totalPrice(order['total']) | currency}}</p>
                                 </li>
-                                <!-- <li class="order-list__item">
-                                    <i class="icon-edit fas fa-pencil-alt"></i>            
-                                </li> -->
+                                <li class="order-list__item">
+                                    <div class="order-list__info" @click="openOrderInfoPopup(order)">
+                                        <i class="fas fa-info"></i>
+                                    </div>
+                                </li>
                             </ul>
                         </perfect-scrollbar>
                     </div>
                 </perfect-scrollbar>
         </div>
         <loading v-if="isLoaded"></loading>
+        <orderInfoPopup :data="orderInfo" @closePopup="closeOrderInfoPopup" v-if="isPopupOpened"></orderInfoPopup>
     </div>
 </template>
 
@@ -65,13 +67,16 @@
 <script>
 import store from '../../../../store';
 import loading from '../../../home-page/components/loading-page/loading-page.vue';
+import orderInfoPopup from '../order-info-popup/order-info-popup.vue';
 
 export default {
     name: "orderList",
     data() {
         return {
             orderList: [],
-            isLoaded: false
+            isLoaded: false,
+            isPopupOpened: false,
+            orderInfo: {}
         };
     },
     created() {
@@ -90,10 +95,19 @@ export default {
         },
         totalQty(list) {
             return Object.values(list).map(product => product['qty']).reduce((a, b) => a + b);
+        },
+        openOrderInfoPopup(data) {
+            this.orderInfo = data;
+            this.isPopupOpened = true;
+        },
+        closeOrderInfoPopup() {
+            this.orderInfo = {};
+            this.isPopupOpened = false;
         }
     },
     components: {
-        loading
+        loading,
+        orderInfoPopup
     }
 };
 </script>
