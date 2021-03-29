@@ -1,0 +1,44 @@
+@import '../assets/shared.scss';
+
+p {
+    margin-bottom: 0;
+}
+
+ol, ul, dl {
+    margin-bottom: 0;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid $disbandColor;
+    border-radius: 0;
+    padding: 10px 5px;
+
+    &:focus {
+        border: none;
+        border-bottom: 1.5px solid $mainColor;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $disbandColor;
+    border-radius: 0;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: $mainColor;
+    background-color: $mainColor;
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+    background-color: #107a7a30;
+}
+
+.spinner-grow {
+    color: $mainColor;
+}

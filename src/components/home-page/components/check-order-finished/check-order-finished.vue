@@ -1,0 +1,34 @@
+<template>
+    <div class="finish">
+        <div class="finish-box">
+            <svg class="finish-svg">
+                <path d="M10,40 L35,60 M35,60 L70,20" />
+            </svg>
+            <p class="finish-title">訂單完成</p>
+            <p class="finish-text">盡快為您出貨!!</p>
+        </div>
+        <div class="finish-box">
+            <p class="finish-btn" @click="goLink('/home')">回首頁</p>
+            <p class="finish-btn" @click="goLink('/products')">繼續購物</p>
+        </div>
+    </div>
+</template>
+
+<style lang="scss">
+@import "./check-order-finished.scss";
+</style>
+
+<script>
+export default {
+    name: "checkOrderFinished",
+    data() {
+        return {
+        };
+    },
+    methods: {
+        goLink(status) {
+            this.$router.push(status).catch(() => {});    
+        }
+    }
+};
+</script>

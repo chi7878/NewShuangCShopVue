@@ -1,0 +1,283 @@
+@import '../../../../assets/shared.scss';
+
+.coupon-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4b4b4b30;
+    z-index: 99;
+
+    &__box {
+        padding: 20px;
+        box-sizing: border-box;
+        width: 800px;
+        height: 350px;
+        background-color: #fff;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    &-title {
+        @include fontStyle(25px, 500);
+        text-align: center;
+    }
+
+    &-form {
+        display: flex;
+        align-items: center;
+        
+        &__input {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            @include fontStyle(17px, 500);
+
+            & input {
+                height: 100%;
+                @include fontStyle(14px, 300);
+            }
+
+            >label {
+                @include fontStyle(14px, 300);
+                margin-bottom: 0;
+            }
+
+            
+            &_null {
+                .coupon-popup-form__input-text {
+                    font-size: 0;
+                }
+            }
+
+            &_warn {
+                label {
+                    color: $warnColor;
+                }
+
+                .form-control {
+                    border-bottom: 1px solid $warnColor;
+                }
+            }
+
+            &-text {
+                @include fontStyle(14px , 300, $warnColor);
+                height: 21px;
+            }
+        }
+
+        &:nth-child(1) {
+            .coupon-popup-form {
+                display: flex;
+
+                &__input {
+                    &:nth-child(1) {
+                        width: 60%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 15%;
+
+                        input[type='number'] {
+                            -moz-appearance:textfield;
+                        }
+                        
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                        }
+                    }
+                }
+                
+
+                &__slide {
+                    width: 20%;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            input[type='number'] {
+                -moz-appearance:textfield;
+            }
+            
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+        }
+
+        &:nth-child(4) {
+            display: flex;
+
+            textarea {
+                @include fontStyle(13px, 300);
+                resize: none;
+                height: 100px;
+            }
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        align-content: center;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    &-button {
+        width: 100px;
+        height: 35px;
+        border-radius: 500px;
+        border: 0;
+        cursor: pointer;
+        margin: 0 10px;
+        @include fontStyle(16px, 300);
+        outline: none;
+
+        &-close {
+            width: 20px;
+            height: 20px;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            > i {
+                font-size: 20px;
+                color: $disbandColor;
+
+                &:hover {
+                    color: $fontColor;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            border: 1px solid $mainColor;
+            background-color: #fff;
+            color: $mainColor;
+        }
+
+        &:nth-child(2) {
+            color: #fff;
+            background-color: $mainColor;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: $mainLightColor;
+        }
+
+        &:active {
+            color: #fff;
+            background-color: $mainDarkColor;
+        }
+    }
+
+    &-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    &-img {
+        &-box {
+            width: 50%;
+
+            &> .coupon-popup-form__input {
+                width: 100%;
+                padding-bottom: 0;
+            }
+        }
+
+        &-upload {
+            padding: 0 5px;
+            box-sizing: border-box;
+
+            &__text {
+                margin-bottom: 5px;
+            }
+
+            & label {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid $disbandColor;
+                padding: 5px; 
+
+                & > i {
+                    color: $fontColor;
+                }
+            }
+
+            & p {
+                @include fontStyle(14px, 300, $fontColor);
+            }
+
+            & input {
+                display: none;
+            }
+        }
+    }
+
+    &-scrollbar {
+        height: 100%;
+
+        &-box {
+            height: calc(100% - 100px);
+            width: 100%;
+        }
+    }
+}
+
+.coupon-popup-buttons .coupon-popup-button_disabled {
+    color: #fff;
+    background-color: $disbandColor;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .coupon-popup {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        
+        &__box {
+            width: 90%;
+            height: 70%;
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+
+            &:nth-child(1) {
+                .coupon-popup-form__slide {
+                    width: 100%;
+                }
+
+                .coupon-popup-form__input:nth-child(1) {
+                    width: 100%;
+                }
+            }
+
+            &__input {
+                width: 100%;
+            }
+        }
+
+        &-button {
+            width: 80px;
+        }
+    }
+}

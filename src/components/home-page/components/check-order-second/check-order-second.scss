@@ -1,0 +1,140 @@
+@import '../../../../assets/shared.scss';
+
+.check-info {
+    width: 40%;
+    margin: 20px auto;
+
+    &-box {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__title {
+            @include fontStyle(18px, 500);
+            margin-bottom: 10px;
+            width: 100%;
+        }
+    }
+
+
+    &-btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    &-btn {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        @include fontStyle(16px, 300);
+
+        &:nth-child(1) {
+            margin-right: 10px;
+            border: 1px solid $mainColor;
+            color: $mainColor;
+            box-sizing: border-box;
+
+            &:hover {
+                background-color: $mainColor;
+                color: #fff;
+            }
+
+            &:active {
+                border-color: $mainDarkColor;
+                background-color: $mainDarkColor;
+                color: #fff;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: $mainColor;
+            color: #fff;
+            
+            &:hover {
+                background-color: $mainLightColor;
+            }
+
+            &:active {
+                background-color: $mainDarkColor;
+            }
+        }
+    }
+    
+    .check-info-btns > .check-info-btn_null {
+        background-color: $disbandColor;
+        border: 1px solid $disbandColor;
+        pointer-events: none;
+    }
+
+    &-input {
+        @include fontStyle(18px, 300);
+        width: 50%;
+        padding: 0 10px;
+
+        &>label {
+            @include fontStyle(14px , 300);
+            margin-bottom: 5px;
+        }
+
+        &__text {
+            @include fontStyle(14px , 300, $warnColor);
+            height: 21px;
+        }
+
+        &_null {
+            .check-info-input__text {
+                font-size: 0;
+            }
+        }
+
+        &_warn {
+            label {
+                color: $warnColor;
+            }
+
+            .form-control {
+                border-bottom: 1px solid $warnColor;
+            }
+        }
+    }
+
+    &-customer {
+        margin-top: 10px;
+
+        &> .check-info-input {
+            &:nth-child(4) {
+                width: calc(100% - 20px);
+            }
+
+            &:nth-child(5) {
+                width: calc(100% - 20px);
+            }
+
+            &:nth-child(6) {
+                width: calc(100% - 20px);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .check-info {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .check-info {
+        width: 95%;
+    }
+}
+
+.check-info-input > .check-info-input__textarea {
+    font-size: 14px;
+    height: 100px;
+    resize: none;
+}
