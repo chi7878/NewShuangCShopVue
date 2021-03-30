@@ -195,7 +195,7 @@
 
         &-box {
             &:nth-child(2) {
-                padding: 0 30px;
+                padding: 0 10px;
             }
         }
 
@@ -206,14 +206,14 @@
         &-info {
             &__text-box {                
                 > p:nth-child(2) {
-                        max-width: 180px;
+                    max-width: 130px;
                 }
             }
         }
 
         &-info {
             &__total-box {
-                width: 80%;
+                width: 95%;
             }  
         }
     }

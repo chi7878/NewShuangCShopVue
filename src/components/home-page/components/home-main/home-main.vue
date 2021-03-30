@@ -12,25 +12,25 @@
                 <p class="main-content__title">人氣商品</p>
                 <p class="main-content__small-title">POPULAR PRODUCTS</p>
                 <ul class="main-content__hot-list">
-                    <li class="main-content__hot-item">
-                        <div class="main-content__hot-img">
+                    <li class="main-content__hot-item" @click="goProductLink('-Lk-WIpIRljnO_DU5rJV')">
+                        <div class="main-content__hot-img" >
                             <img src="../../../../assets/images/product/iphone-12-pro-max.jpg" alt="" />
                         </div>
                         <p class="main-content__hot-text">APPLE IPhone 12 Pro Max</p>
                     </li>
-                    <li class="main-content__hot-item">
+                    <li class="main-content__hot-item" @click="goProductLink('-MWhf0IqyOTDiw8pWPsj')">
                         <div class="main-content__hot-img">
                             <img src="../../../../assets/images/product/air-pods-pro.jpg" alt="" />
                         </div>
                         <p class="main-content__hot-text">APPLE AirPods Pro</p>
                     </li>
-                    <li class="main-content__hot-item">
+                    <li class="main-content__hot-item" @click="goProductLink('-Lk-Wg4eNwBAkuV7bE2J')">
                         <div class="main-content__hot-img">
                             <img src="../../../../assets/images/product/S21.jpg" alt="" />
                         </div>
                         <p class="main-content__hot-text">SAMSUNG Galaxy S21 Ultra</p>
                     </li>
-                    <li class="main-content__hot-item">
+                    <li class="main-content__hot-item" @click="goProductLink('-Ljylaq-HYasQjdq0jy2')">
                         <div class="main-content__hot-img">
                             <img src="../../../../assets/images/product/google-nest-audio.jpg" alt="" />
                         </div>
@@ -111,6 +111,9 @@ export default {
         },
         goClassLink(data) {
             this.$router.push({path : '/products' ,query: { status: data }} ).catch(()=>{});
+        },
+        goProductLink(id) {
+            this.$router.push(`/product/${id}`).catch(()=>{});
         },
         changeFeatureTab(status) {
             this.activeFeatureTab +=status;

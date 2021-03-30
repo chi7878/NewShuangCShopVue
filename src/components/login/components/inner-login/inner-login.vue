@@ -52,6 +52,7 @@ export default {
     },
     created() {
         if (document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1') !== '') {
+            store.state.cookies = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
             this.$router.push('/dashboard').catch(() => {});
         }
     },

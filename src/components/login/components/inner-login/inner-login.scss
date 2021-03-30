@@ -180,7 +180,7 @@
 
             &__title {
                 padding: 10px 0;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
                 font-size: 18px;
                 line-height: 21px;
             }
@@ -197,6 +197,10 @@
 
             &__text {
                 font-size: 12px;
+            }
+
+            &__button {
+                margin-top: 10px;
             }
         }
     }
