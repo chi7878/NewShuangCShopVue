@@ -31,13 +31,13 @@ angular版本
 
 ## 使用技術
 
- Vue
- Vue Cli
- Vuex
- Vue-Router
- Axios
- SCSS
- Bootstrap
+ Vue  
+ Vue Cli  
+ Vuex  
+ Vue-Router  
+ Axios  
+ SCSS  
+ Bootstrap  
  Google Fonts
 
 
