@@ -8,12 +8,12 @@ New SHUANG C 電商網站(Vue版本)
 
 
 ## DEMO
-Vue版本
+Vue版本  
 [https://chi7878.github.io/NewShuangCShopVue/home](https://chi7878.github.io/NewShuangCShopVue/home)
 
 or 
 
-angular版本
+angular版本  
 [https://chi7878.github.io/NewShuangCShopAngular/home](https://chi7878.github.io/NewShuangCShopAngular/home)
 
 
